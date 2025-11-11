@@ -179,7 +179,6 @@ h1, h2, h3 {
 
 .work-item {
     position: relative;
-    aspect-ratio: 1;
     overflow: hidden;
     cursor: pointer;
     background-color: var(--beige);
@@ -187,9 +186,19 @@ h1, h2, h3 {
 
 .work-image {
     width: 100%;
-    height: 100%;
     position: relative;
     overflow: hidden;
+}
+
+.work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.work-item:hover .work-image img {
+    transform: scale(1.05);
 }
 
 .work-placeholder {
@@ -225,6 +234,11 @@ h1, h2, h3 {
     padding: 30px;
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.work-item:hover .work-image img {
+    transform: scale(1.02);
 }
 
 .work-item:hover .work-overlay {
@@ -340,6 +354,69 @@ h1, h2, h3 {
     color: var(--text-gray);
     font-weight: 300;
     letter-spacing: 0.02em;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--soft-white);
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Animations */
