@@ -120,6 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     collectPortfolioImages();
 
+    // Open modal when clicking on non-carousel portfolio items
+    document.querySelectorAll('.work-item:not(.work-item--carousel)').forEach(item => {
+        const img = item.querySelector('.work-image img');
+        if (!img) return;
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal(portfolioImages, findPortfolioIndex(img.src));
+        });
+    });
+
     // Open modal for case images
     document.querySelectorAll('.case-image a').forEach(link => {
         const img = link.querySelector('img');
