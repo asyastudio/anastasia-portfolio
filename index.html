@@ -7,20 +7,29 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Hero Banner -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-image">
-                <img src="images/avatar.jpeg" alt="Анастасия Горн">
+                <div class="photo-frame">
+                    <div class="frame-card frame-card--under"></div>
+                    <div class="frame-photo">
+                        <img src="images/avatar.jpeg" alt="Анастасия Горн">
+                    </div>
+                </div>
             </div>
             <div class="hero-content">
-                <h1 class="hero-name">Печатный дизайн · Брендинг · Управление проектами</h1>
-                <p class="hero-title">Графический дизайнер</p>
-                <p class="hero-tagline">Анастасия</p>
-                <a href="#works" class="hero-button">Смотреть портфолио</a>
+                <h1 class="hero-name">Graphic Designer</h1>
+                <p class="hero-title">Branding · Print · Digital</p>
+                <p class="hero-tools">Figma · InDesign · Illustrator · Photoshop · Нейросети</p>
+                <p class="hero-tagline">Анастасия Горн</p>
+                <div class="hero-buttons">
+                    <a href="#works" class="hero-button">Portfolio</a>
+                    <a href="https://drive.google.com/file/d/1uC5-L3LY5gAyWWB2nEC7stMSFcygxZpD/view" target="_blank" rel="noopener noreferrer" class="hero-button hero-button--secondary">PDF</a>
+                </div>
             </div>
         </div>
     </section>
@@ -29,9 +38,42 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-heading">Обо мне</h2>
-            <div class="about-content">
-                <p>Более 4 лет опыта в графическом дизайне. Специализируюсь на создании элегантных и функциональных макетов для каталогов, брошюр и корпоративных календарей. Моя экспертиза включает разработку фирменного стиля и комплексное управление проектами, ведя каждый проект от первоначальной концепции до финальной печатной продукции.</p>
-                <p>Применяю тщательный подход к подготовке и контролю печати, обеспечивая соответствие каждой детали высочайшим стандартам качества. Моя работа сочетает эстетическую утончённость с практической функциональностью, создавая дизайны, которые не только красивы, но и эффективно передают сообщение вашего бренда.</p>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <span class="about-stat-value">400+</span>
+                    <span class="about-stat-label">проектов</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-value">4 года</span>
+                    <span class="about-stat-label">опыта</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-value">Топ-1</span>
+                    <span class="about-stat-label">в категории «Полиграфия» на Kwork</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-value">Рейтинг 5.0</span>
+                    <span class="about-stat-label">все отзывы положительные</span>
+                </div>
+            </div>
+            <h3 class="about-subheading">Основные направления</h3>
+            <div class="about-directions">
+                <div class="about-direction">
+                    <h4 class="about-direction-title">Дизайн и вёрстка</h4>
+                    <p class="about-direction-desc">Более 15 000 страниц печатных и цифровых материалов</p>
+                </div>
+                <div class="about-direction">
+                    <h4 class="about-direction-title">Брендинг</h4>
+                    <p class="about-direction-desc">Логотипы, брендбуки, мерч и фирменные носители</p>
+                </div>
+                <div class="about-direction">
+                    <h4 class="about-direction-title">UI / UX</h4>
+                    <p class="about-direction-desc">Проектирование интерфейсов и пользовательских сценариев</p>
+                </div>
+                <div class="about-direction">
+                    <h4 class="about-direction-title">Полное сопровождение проектов</h4>
+                    <p class="about-direction-desc">От технического задания до финальной реализации</p>
+                </div>
             </div>
         </div>
     </section>
