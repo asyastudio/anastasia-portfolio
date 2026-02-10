@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Banner -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-image">
@@ -22,22 +21,21 @@
                 </div>
             </div>
             <div class="hero-content">
-                <h1 class="hero-name">Graphic Designer</h1>
+                <h1 class="hero-name" data-text="Graphic Designer">Graphic Designer</h1>
                 <p class="hero-title">Branding · Print · Digital</p>
-                <p class="hero-tools">Figma · InDesign · Illustrator · Photoshop · Нейросети</p>
                 <p class="hero-tagline">Анастасия Горн</p>
                 <div class="hero-buttons">
                     <a href="#works" class="hero-button">Portfolio</a>
-                    <a href="https://drive.google.com/file/d/1uC5-L3LY5gAyWWB2nEC7stMSFcygxZpD/view" target="_blank" rel="noopener noreferrer" class="hero-button hero-button--secondary">PDF</a>
+                    <a href="https://t.me/asya_studio" target="_blank" rel="noopener noreferrer" class="hero-button hero-button--secondary">Связаться со мной</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-heading">Обо мне</h2>
+            <p class="about-tools">Figma · InDesign · Illustrator · Photoshop · Нейросети</p>
             <div class="about-stats">
                 <div class="about-stat">
                     <span class="about-stat-value">400+</span>
@@ -49,14 +47,13 @@
                 </div>
                 <div class="about-stat">
                     <span class="about-stat-value">Топ-1</span>
-                    <span class="about-stat-label">в категории «Полиграфия» на Kwork</span>
+                    <span class="about-stat-label">«Полиграфия» на Kwork</span>
                 </div>
                 <div class="about-stat">
                     <span class="about-stat-value">Рейтинг 5.0</span>
                     <span class="about-stat-label">все отзывы положительные</span>
                 </div>
             </div>
-            <h3 class="about-subheading">Основные направления</h3>
             <div class="about-directions">
                 <div class="about-direction">
                     <h4 class="about-direction-title">Дизайн и вёрстка</h4>
@@ -70,132 +67,252 @@
                     <h4 class="about-direction-title">UI / UX</h4>
                     <p class="about-direction-desc">Проектирование интерфейсов и пользовательских сценариев</p>
                 </div>
-                <div class="about-direction">
-                    <h4 class="about-direction-title">Полное сопровождение проектов</h4>
-                    <p class="about-direction-desc">От технического задания до финальной реализации</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Selected Works -->
     <section class="works" id="works">
         <div class="container">
-            <h2 class="section-heading">Избранные работы</h2>
-            <div class="works-grid">
-                <div class="work-item">
+            <h2 class="section-heading">Портфолио</h2>
+            <div class="works-grid"><div class="work-item">
                     <div class="work-image">
-                        <img src="images/standfelzer.png" alt="Каталог продукции">
+                        <img src="images/Instagram post - 2.png" alt="Многостраничная верстка — 1">
                     </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Каталог продукции</h3>
-                        <p class="work-description">Комплексный дизайн макета для каталога премиум-бренда</p>
+                    <div class="work-hover">Многостраничная верстка</div>
+                </div>
+                <div class="work-item work-item--carousel">
+                    <div class="work-image">
+                        <div class="work-slider" data-slider="insta-collage" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 13.png" alt="Серия Instagram — 1">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 14.png" alt="Серия Instagram — 2">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 40.png" alt="Серия Instagram — 3">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 41.png" alt="Серия Instagram — 4">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Разработка логотипа</div>
+                    </div>
+                </div>
+                <div class="work-item work-item--carousel">
+                    <div class="work-image">
+                        <div class="work-slider" data-slider="insta-stand" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 3.png" alt="Кейс стенд — 1">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 4.png" alt="Кейс стенд — 2">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 5.png" alt="Кейс стенд — 3">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 6.png" alt="Кейс стенд — 4">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 7.png" alt="Кейс стенд — 5">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Кейс №1</div>
+                    </div>
+                </div>
+                <div class="work-item work-item--carousel">
+                    <div class="work-image">
+                        <div class="work-slider" data-slider="insta-set-2" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 10.png" alt="Серия Instagram — 7">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 9.png" alt="Серия Instagram — 6">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 8.png" alt="Серия Instagram — 5">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Разработка логотипа</div>
                     </div>
                 </div>
                 <div class="work-item">
                     <div class="work-image">
-                        <div class="work-placeholder">Фирменный стиль</div>
+                        <img src="images/уу1.png" alt="Многостраничная верстка — 2">
                     </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Фирменный стиль</h3>
-                        <p class="work-description">Полная система визуальной идентичности для корпоративного клиента</p>
-                    </div>
+                    <div class="work-hover">Многостраничная верстка</div>
                 </div>
-                <div class="work-item">
+                <div class="work-item work-item--carousel">
                     <div class="work-image">
-                        <div class="work-placeholder">Макет брошюры</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Маркетинговая брошюра</h3>
-                        <p class="work-description">Элегантный дизайн брошюры с акцентом на типографику</p>
+                        <div class="work-slider" data-slider="insta-book" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 12.png" alt="Кейс пособие — 1">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 59.png" alt="Кейс пособие — 2">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 60.png" alt="Кейс пособие — 3">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Кейс №3</div>
                     </div>
                 </div>
-                <div class="work-item">
+                <div class="work-item work-item--carousel">
                     <div class="work-image">
-                        <div class="work-placeholder">Корпоративный календарь</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Корпоративный календарь</h3>
-                        <p class="work-description">Дизайн годового календаря с авторской фотографией</p>
+                        <div class="work-slider" data-slider="insta-presentation" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 45.png" alt="Презентация — 1">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 46.png" alt="Презентация — 2">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Разработка презентации</div>
                     </div>
                 </div>
-                <div class="work-item">
+                <div class="work-item work-item--carousel">
                     <div class="work-image">
-                        <div class="work-placeholder">Дизайн логотипа</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Коллекция логотипов</h3>
-                        <p class="work-description">Современные дизайны логотипов для различных отраслей</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <div class="work-image">
-                        <div class="work-placeholder">Печатная продукция</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Печатная продукция</h3>
-                        <p class="work-description">Визитки, бланки и комплекты канцелярии</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <div class="work-image">
-                        <div class="work-placeholder">Дизайн упаковки</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Дизайн упаковки</h3>
-                        <p class="work-description">Премиальные решения упаковки для розничных товаров</p>
+                        <div class="work-slider" data-slider="insta-set-3" data-index="0">
+                            <div class="work-slides">
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 58.png" alt="Серия Instagram — 8">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 52.png" alt="Серия Instagram — 9">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 53.png" alt="Серия Instagram — 10">
+                                </div>
+                                <div class="work-slide">
+                                    <img src="images/Instagram post - 55.png" alt="Серия Instagram — 11">
+                                </div>
+                            </div>
+                            <button class="work-control work-control--prev" type="button" aria-label="Предыдущий слайд">‹</button>
+                            <button class="work-control work-control--next" type="button" aria-label="Следующий слайд">›</button>
+                            <div class="work-dots" role="tablist" aria-label="Слайды серии"></div>
+                        </div>
+                        <div class="work-hover">Разработка ИИ аватара</div>
                     </div>
                 </div>
-                <div class="work-item">
-                    <div class="work-image">
-                        <div class="work-placeholder">Редакционный макет</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Редакционный макет</h3>
-                        <p class="work-description">Проекты дизайна журналов и публикаций</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <div class="work-image">
-                        <div class="work-placeholder">Брендбук</div>
-                    </div>
-                    <div class="work-overlay">
-                        <h3 class="work-title">Брендбук</h3>
-                        <p class="work-description">Комплексные руководства по стилю бренда и мануалы</p>
-                    </div>
-                </div>
+            </div>
+            <div class="works-actions">
+                <button class="works-toggle" type="button">Показать больше</button>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="cases" id="cases">
         <div class="container">
-            <h2 class="section-heading">Услуги</h2>
-            <ul class="services-list">
-                <li>Макетирование каталогов и брошюр</li>
-                <li>Фирменный стиль и дизайн логотипа</li>
-                <li>Корпоративные календари</li>
-                <li>Подготовка и контроль печатного производства</li>
-            </ul>
+            <h2 class="section-heading">Кейсы</h2>
+            <div class="cases-grid">
+                <article class="case-card">
+                    <div class="case-image">
+                        <a href="images/2.png">
+                            <img src="images/2.png" alt="VIG Trans — оформление стенда на выставку CILF 2025">
+                        </a>
+                    </div>
+                    <div class="case-content">
+                        <p class="case-kicker">Кейс №1</p>
+                        <h3 class="case-title">VIG Trans — оформление стенда на выставку CILF 2025</h3>
+                        <p class="case-text">Дизайн стенда, оформление стен, ролл-апов и&nbsp;печатных материалов. Полное сопровождение печати и&nbsp;монтажа.</p>
+                        <p class="case-result"><strong>Результат:</strong> стенд представлен на&nbsp;международной выставке в&nbsp;Китае.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-image">
+                        <a href="images/3.png">
+                            <img src="images/3.png" alt="Корпоративный календарь — AI-дизайн, концепция и печать">
+                        </a>
+                    </div>
+                    <div class="case-content">
+                        <p class="case-kicker">Кейс №2</p>
+                        <h3 class="case-title">Корпоративный календарь — AI-дизайн, концепция и печать</h3>
+                        <p class="case-text">Разработка концепций, серия AI-иллюстраций и&nbsp;подготовка макетов к&nbsp;печати на&nbsp;основе фотографий производства.</p>
+                        <p class="case-result"><strong>Результат:</strong> календарь выпущен в&nbsp;печать и&nbsp;использован в&nbsp;корпоративных коммуникациях.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-image">
+                        <a href="images/4.png">
+                            <img src="images/4.png" alt="Учебное пособие — 240 страниц, дизайн и вёрстка">
+                        </a>
+                    </div>
+                    <div class="case-content">
+                        <p class="case-kicker">Кейс №3</p>
+                        <h3 class="case-title">Учебное пособие (rus/eng) — 240 стр., дизайн и вёрстка</h3>
+                        <p class="case-text">Дизайн, двуязычная верстка, подготовка 240&nbsp;страниц и&nbsp;контроль процесса печати.</p>
+                        <p class="case-result"><strong>Результат:</strong> пособие выпущено в&nbsp;печать и&nbsp;используется как обучающий материал.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-image">
+                        <a href="images/5.png">
+                            <img src="images/5.png" alt="Felzer — оформление стенда на выставку Chillventa">
+                        </a>
+                    </div>
+                    <div class="case-content">
+                        <p class="case-kicker">Кейс №4</p>
+                        <h3 class="case-title">Felzer — оформление стенда на выставку Chillventa</h3>
+                        <p class="case-text">Дизайн стенда, баннеров, ролл-апов, светового короба, мерча и&nbsp;каталога. Сопровождение до&nbsp;финальной реализации.</p>
+                        <p class="case-result"><strong>Результат:</strong> стенд успешно представлен на&nbsp;выставке.</p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-heading">Контакты</h2>
             <div class="contact-content">
-                <a href="mailto:hello@anastasiagorn.com" class="contact-email">hello@anastasiagorn.com</a>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <span class="contact-label">Телефон</span>
+                        <a href="tel:+79236845395" class="contact-value">+7 923 684-53-95</a>
+                        <a href="tel:+995598120950" class="contact-value">+995 598 12-09-50</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Почта</span>
+                        <a href="mailto:asya.studio1@gmail.com" class="contact-value">asya.studio1@gmail.com</a>
+                    </div>
+                </div>
                 <div class="social-links">
                     <a href="https://instagram.com/asya.studioo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
                         </svg>
                     </a>
-                    <a href="https://www.behance.net/ea3ee149" class="social-link" aria-label="Behance">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.657-5.564-5.657 0-4.001 2.49-5.657 5.564-5.657 3.069 0 4.951 1.474 5.376 4.83h-3.027c-.208-1.531-.955-2.49-2.349-2.49-1.636 0-2.731 1.177-2.731 3.317 0 2.127 1.095 3.317 2.731 3.317 1.345 0 2.141-.87 2.391-2.027h3.021zm-6.911-5.557c0 .555-.285.872-1.003.872h-1.629v-1.616h1.629c.717 0 1.003.317 1.003.744zm-9.815 5.557v-5.842h-2.875v-1.558h6.752v1.558h-2.875v5.842h-3.002z" fill="currentColor"/>
+                    <a href="https://kwork.ru/user/asya_studio" class="social-link" aria-label="Kwork">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+                            <path d="M9 7.5v9M9 12l6-4.5M9 12l6 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
                 </div>
@@ -209,10 +326,13 @@
         </div>
     </footer>
 
-    <!-- Modal for image viewing -->
     <div id="imageModal" class="modal">
         <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage">
+        <div class="modal-frame">
+            <button class="modal-nav modal-nav--prev" type="button" aria-label="Предыдущее фото">‹</button>
+            <img class="modal-content" id="modalImage">
+            <button class="modal-nav modal-nav--next" type="button" aria-label="Следующее фото">›</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
