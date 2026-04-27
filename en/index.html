@@ -8,6 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .cover-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            background: rgba(11, 31, 77, 0.88);
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.78rem;
+            line-height: 1;
+            padding: 8px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            pointer-events: none;
+            border: 1px solid rgba(255,255,255,0.26);
+        }
+        .work-image, .case-image {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     <section class="hero" id="home">
@@ -77,11 +100,13 @@
             <div class="works-grid"><div class="work-item">
                     <div class="work-image">
                         <img src="../images/Instagram post - 2.png" alt="Multi-page layout — 1">
+                        <span class="cover-label">Layout Design</span>
                     </div>
                     <div class="work-hover">Multi-page layout</div>
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">Logo Design</span>
                         <div class="work-slider" data-slider="insta-collage" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -106,6 +131,7 @@
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">Exhibition Booth</span>
                         <div class="work-slider" data-slider="insta-stand" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -128,11 +154,12 @@
                             <button class="work-control work-control--next" type="button" aria-label="Next slide">›</button>
                             <div class="work-dots" role="tablist" aria-label="Series slides"></div>
                         </div>
-                        <div class="work-hover">Case #1</div>
+                        <div class="work-hover">Exhibition Booth</div>
                     </div>
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">Logo Design</span>
                         <div class="work-slider" data-slider="insta-set-2" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -155,11 +182,13 @@
                 <div class="work-item">
                     <div class="work-image">
                         <img src="../images/уу1.png" alt="Multi-page layout — 2">
+                        <span class="cover-label">Catalog Layout</span>
                     </div>
                     <div class="work-hover">Multi-page layout</div>
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">Training Guide</span>
                         <div class="work-slider" data-slider="insta-book" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -176,11 +205,12 @@
                             <button class="work-control work-control--next" type="button" aria-label="Next slide">›</button>
                             <div class="work-dots" role="tablist" aria-label="Series slides"></div>
                         </div>
-                        <div class="work-hover">Case #3</div>
+                        <div class="work-hover">Training Guide</div>
                     </div>
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">Presentation</span>
                         <div class="work-slider" data-slider="insta-presentation" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -194,11 +224,12 @@
                             <button class="work-control work-control--next" type="button" aria-label="Next slide">›</button>
                             <div class="work-dots" role="tablist" aria-label="Series slides"></div>
                         </div>
-                        <div class="work-hover">Presentation design</div>
+                        <div class="work-hover">Presentation Design</div>
                     </div>
                 </div>
                 <div class="work-item work-item--carousel">
                     <div class="work-image">
+                        <span class="cover-label">AI Avatar</span>
                         <div class="work-slider" data-slider="insta-set-3" data-index="0">
                             <div class="work-slides">
                                 <div class="work-slide">
@@ -218,7 +249,7 @@
                             <button class="work-control work-control--next" type="button" aria-label="Next slide">›</button>
                             <div class="work-dots" role="tablist" aria-label="Series slides"></div>
                         </div>
-                        <div class="work-hover">AI avatar design</div>
+                        <div class="work-hover">AI Avatar Design</div>
                     </div>
                 </div>
             </div>
@@ -234,6 +265,7 @@
             <div class="cases-grid">
                 <article class="case-card">
                     <div class="case-image">
+                        <span class="cover-label">Case #1</span>
                         <a href="../images/2.png">
                             <img src="../images/2.png" alt="VIG Trans — Exhibition booth design for CILF 2025">
                         </a>
@@ -247,6 +279,7 @@
                 </article>
                 <article class="case-card">
                     <div class="case-image">
+                        <span class="cover-label">Case #2</span>
                         <a href="../images/3.png">
                             <img src="../images/3.png" alt="Corporate calendar — AI design, concept, and print">
                         </a>
@@ -260,6 +293,7 @@
                 </article>
                 <article class="case-card">
                     <div class="case-image">
+                        <span class="cover-label">Case #3</span>
                         <a href="../images/4.png">
                             <img src="../images/4.png" alt="Training guide — 240 pages, design and layout">
                         </a>
@@ -273,6 +307,7 @@
                 </article>
                 <article class="case-card">
                     <div class="case-image">
+                        <span class="cover-label">Case #4</span>
                         <a href="../images/5.png">
                             <img src="../images/5.png" alt="Felzer — Exhibition booth design for Chillventa">
                         </a>
