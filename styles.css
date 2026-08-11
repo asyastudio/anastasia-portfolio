@@ -1922,10 +1922,13 @@ h1, h2, h3, h4 {
     .container { padding: 0 20px; }
 
     .hero {
-        padding: 48px 0 20px;
+        padding: 36px 0 16px;
     }
 
     .hero-buttons { justify-content: center; }
+    .hero-tools { margin-bottom: 24px; }
+    .group-label { margin-bottom: 18px; }
+    .group-label--next { margin-top: 64px; }
 
     .topbar__inner { padding: 0 20px; }
     .topbar__nav { display: none; }
@@ -1935,12 +1938,21 @@ h1, h2, h3, h4 {
         margin-top: 10px;
     }
     .topbar__contacts a {
-        font-size: 0.75rem;
-        padding-right: 12px;
-        margin-right: 12px;
+        font-size: 0.6875rem;
+        padding-right: 9px;
+        margin-right: 9px;
     }
-    .topbar__left { gap: 12px; }
+    .topbar { padding: 10px 0; }
+    .topbar__left { gap: 10px; }
     .topbar__pill { font-size: 0.75rem; padding: 6px 12px; }
+
+    /* the row does not fit on a phone: icons repeat in the contact block below */
+    .topbar__social { display: none; }
+    .topbar__inner { gap: 10px; }
+    .topbar__brand { font-size: 0.875rem; }
+    .topbar__avatar { width: 24px; height: 24px; }
+    .topbar__langs { margin-right: 0; }
+    .topbar__lang { font-size: 0.75rem; padding: 3px 8px; }
 
     .hero-container { padding: 0 20px; }
     .hero-name { font-size: 1.4rem; letter-spacing: -0.02em; }
