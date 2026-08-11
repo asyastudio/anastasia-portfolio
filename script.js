@@ -91,11 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
     };
 
+    // grid images are downscaled previews; data-full points at the full-size file
+    const fullSrc = (img) => img.dataset.full
+        ? new URL(img.dataset.full, document.baseURI).href
+        : img.src;
+
     const collectPortfolioImages = () => {
         const collected = [];
         document.querySelectorAll('.project__strip img, .works-grid .work-item img').forEach(img => {
             if (img && img.src) {
-                collected.push({ src: img.src, alt: img.alt || '' });
+                collected.push({ src: fullSrc(img), alt: img.alt || '' });
             }
         });
         portfolioImages = collected;
@@ -115,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            openModal(portfolioImages, findPortfolioIndex(img.src));
+            openModal(portfolioImages, findPortfolioIndex(fullSrc(img)));
         });
     });
 
