@@ -92,21 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const collectPortfolioImages = () => {
-        const items = document.querySelectorAll('.works-grid .work-item');
         const collected = [];
-        items.forEach(item => {
-            const slider = item.querySelector('.work-slider');
-            if (slider) {
-                slider.querySelectorAll('.work-slide img').forEach(img => {
-                    if (img && img.src) {
-                        collected.push({ src: img.src, alt: img.alt || '' });
-                    }
-                });
-            } else {
-                const img = item.querySelector('.work-image img');
-                if (img && img.src) {
-                    collected.push({ src: img.src, alt: img.alt || '' });
-                }
+        document.querySelectorAll('.project__strip img, .works-grid .work-item img').forEach(img => {
+            if (img && img.src) {
+                collected.push({ src: img.src, alt: img.alt || '' });
             }
         });
         portfolioImages = collected;
@@ -119,6 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     collectPortfolioImages();
+
+    // Open modal when clicking any project image
+    document.querySelectorAll('.project__strip img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal(portfolioImages, findPortfolioIndex(img.src));
+        });
+    });
 
     // Open modal when clicking on non-carousel portfolio items
     document.querySelectorAll('.work-item:not(.work-item--carousel)').forEach(item => {
@@ -135,12 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open modal for case images
     document.querySelectorAll('.case-image a').forEach(link => {
         const img = link.querySelector('img');
-        if (img) {
+        const href = link.getAttribute('href') || '';
+        const isImageLink = /\.(png|jpe?g|webp|gif|svg)$/i.test(href);
+        if (img && isImageLink) {
             link.style.cursor = 'pointer';
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                openModal([{ src: link.getAttribute('href') || img.src, alt: img.alt }], 0);
+                openModal([{ src: href || img.src, alt: img.alt }], 0);
             });
         }
     });
@@ -199,6 +200,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Scrollable strips
+    document.querySelectorAll('.project__strip').forEach((wrap) => {
+        const row = wrap.querySelector('.scroll-row');
+        const prevBtn = wrap.querySelector('.scroll-control--prev');
+        const nextBtn = wrap.querySelector('.scroll-control--next');
+        if (!row || !prevBtn || !nextBtn) return;
+
+        const step = () => {
+            const first = row.querySelector('figure');
+            return first ? first.getBoundingClientRect().width + 6 : row.clientWidth / 4;
+        };
+
+        const sync = () => {
+            const max = row.scrollWidth - row.clientWidth - 1;
+            prevBtn.disabled = row.scrollLeft <= 0;
+            nextBtn.disabled = row.scrollLeft >= max;
+        };
+
+        prevBtn.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
+        nextBtn.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
+        row.addEventListener('scroll', sync, { passive: true });
+        window.addEventListener('resize', sync);
+        sync();
+    });
+
     // Portfolio carousels
     document.querySelectorAll('.work-slider').forEach((slider) => {
         const slides = slider.querySelectorAll('.work-slide');
@@ -209,17 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!slides.length || !track || !prevBtn || !nextBtn || !dotsWrap) {
             return;
         }
-
-        slides.forEach((slide) => {
-            const img = slide.querySelector('img');
-            if (!img) return;
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                openModal(portfolioImages, findPortfolioIndex(img.src));
-            });
-        });
 
         let index = 0;
         const dots = Array.from({ length: slides.length }, (_, i) => {
