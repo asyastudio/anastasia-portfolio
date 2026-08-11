@@ -135,12 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open modal for case images
     document.querySelectorAll('.case-image a').forEach(link => {
         const img = link.querySelector('img');
-        if (img) {
+        const href = link.getAttribute('href') || '';
+        const isImageLink = /\.(png|jpe?g|webp|gif|svg)$/i.test(href);
+        if (img && isImageLink) {
             link.style.cursor = 'pointer';
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                openModal([{ src: link.getAttribute('href') || img.src, alt: img.alt }], 0);
+                openModal([{ src: href || img.src, alt: img.alt }], 0);
             });
         }
     });
