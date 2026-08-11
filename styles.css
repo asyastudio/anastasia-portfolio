@@ -141,8 +141,8 @@ h1, h2, h3, h4 {
     top: 0;
     z-index: 100;
     padding: 14px 0;
-    background: var(--surface);
-    border-bottom: 1px solid var(--hairline-soft);
+    background: var(--surface-tint);
+    border-bottom: 1px solid var(--hairline);
 }
 
 .topbar__inner {
@@ -169,23 +169,28 @@ h1, h2, h3, h4 {
 .topbar__social {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
 }
 
 .topbar__social a {
-    width: 34px;
     height: 34px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--ink);
-    background: var(--surface-tint);
-    transition: background-color 0.2s ease;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
 }
 
-.topbar__social a:hover {
-    background: var(--surface-tint-2);
+.topbar__social a:hover { opacity: 1; }
+
+/* Kwork has no recognisable glyph — show the name instead */
+.social-word {
+    padding: 0 2px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
 }
 
 .topbar__social svg {
@@ -234,14 +239,14 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-pill);
     font-size: 0.875rem;
     text-decoration: none;
-    color: var(--ink);
-    background: var(--surface-tint);
+    color: var(--white);
+    background: var(--accent);
     border: none;
     white-space: nowrap;
     transition: background-color 0.2s ease;
 }
 
-.topbar__pill:hover { background: var(--surface-tint-2); }
+.topbar__pill:hover { background: var(--accent-hover); }
 
 .topbar__pill--strong {
     background: var(--accent);
@@ -304,8 +309,8 @@ h1, h2, h3, h4 {
 .topbar__lang:hover { color: var(--ink); }
 
 .topbar__lang--active {
-    color: var(--ink);
-    background: var(--surface-tint-2);
+    color: var(--white);
+    background: var(--accent);
 }
 
 .hero {
@@ -1740,20 +1745,15 @@ h1, h2, h3, h4 {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    align-items: center;
+    gap: 20px;
 }
 
 .social-link {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--glass-float);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-edge);
-    box-shadow: var(--glass-shadow);
+    height: 24px;
     color: var(--ink);
-    transition: transform 0.25s ease;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1764,9 +1764,7 @@ h1, h2, h3, h4 {
     height: 20px;
 }
 
-.social-link:hover {
-    transform: translateY(-2px);
-}
+.social-link:hover { opacity: 1; }
 
 .footer {
     padding: 40px 0 48px;
