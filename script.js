@@ -82,12 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalNext) modalNext.style.display = hasMultiple ? 'flex' : 'none';
     };
 
+    // the open photo is addressable as #project-slug-N so a link can be shared
+    const syncHash = () => {
+        const hash = modalImages[modalIndex] && modalImages[modalIndex].hash;
+        const url = location.pathname + location.search + (hash ? '#' + hash : '');
+        history.replaceState(null, '', url);
+    };
+
+    const clearHash = () => {
+        history.replaceState(null, '', location.pathname + location.search);
+    };
+
     const openModal = (images, index = 0) => {
         modalImages = images;
         modalIndex = index;
         modal.classList.add('show');
         updateModalImage();
         updateModalNav();
+        syncHash();
         document.body.style.overflow = 'hidden';
     };
 
@@ -98,10 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const collectPortfolioImages = () => {
         const collected = [];
+        const seenInProject = {};
         document.querySelectorAll('.project__strip img, .works-grid .work-item img').forEach(img => {
-            if (img && img.src) {
-                collected.push({ src: fullSrc(img), alt: img.alt || '' });
+            if (!img || !img.src) return;
+            const project = img.closest('.project');
+            let hash = '';
+            if (project && project.id) {
+                seenInProject[project.id] = (seenInProject[project.id] || 0) + 1;
+                hash = project.id + '-' + seenInProject[project.id];
             }
+            collected.push({ src: fullSrc(img), alt: img.alt || '', hash });
         });
         portfolioImages = collected;
     };
@@ -158,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImages = [];
         modalIndex = 0;
         updateModalNav();
+        clearHash();
     }
 
     closeBtn.addEventListener('click', closeModal);
@@ -175,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalImages.length <= 1) return;
             modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
             updateModalImage();
+            syncHash();
         });
     }
 
@@ -185,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalImages.length <= 1) return;
             modalIndex = (modalIndex + 1) % modalImages.length;
             updateModalImage();
+            syncHash();
         });
     }
 
@@ -198,12 +219,54 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') {
             modalIndex = (modalIndex + 1) % modalImages.length;
             updateModalImage();
+            syncHash();
         }
         if (e.key === 'ArrowLeft') {
             modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
             updateModalImage();
+            syncHash();
         }
     });
+
+    // "copy link" button inside the modal
+    const modalShare = document.querySelector('.modal-share');
+    if (modalShare) {
+        const defaultLabel = modalShare.textContent;
+        modalShare.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const link = location.href;
+            const done = () => {
+                modalShare.textContent = modalShare.dataset.done || 'Скопировано';
+                setTimeout(() => { modalShare.textContent = defaultLabel; }, 1600);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(done).catch(() => {});
+            } else {
+                const tmp = document.createElement('textarea');
+                tmp.value = link;
+                document.body.appendChild(tmp);
+                tmp.select();
+                document.execCommand('copy');
+                document.body.removeChild(tmp);
+                done();
+            }
+        });
+    }
+
+    // open the photo referenced by the address, e.g. /#vig-trans-2
+    const openFromHash = () => {
+        const hash = location.hash.replace('#', '');
+        if (!hash) return;
+        const idx = portfolioImages.findIndex(img => img.hash === hash);
+        if (idx >= 0) {
+            const project = document.getElementById(hash.replace(/-\d+$/, ''));
+            if (project) project.scrollIntoView();
+            openModal(portfolioImages, idx);
+        }
+    };
+
+    openFromHash();
 
     // Scrollable strips
     document.querySelectorAll('.project__strip').forEach((wrap) => {
