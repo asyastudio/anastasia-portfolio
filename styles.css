@@ -1766,31 +1766,6 @@ h1, h2, h3, h4 {
 
 .social-link:hover { opacity: 1; }
 
-.modal-share {
-    position: absolute;
-    left: 50%;
-    bottom: -46px;
-    transform: translateX(-50%);
-    padding: 8px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-    font-family: inherit;
-    font-size: 0.8125rem;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    z-index: 3;
-}
-
-.modal-share:hover { background: rgba(255, 255, 255, 0.24); }
-
-@media (max-width: 768px) {
-    .modal-share { bottom: -40px; font-size: 0.75rem; }
-}
-
 /* CV page */
 .cv {
     padding: 40px 0 72px;
@@ -1973,12 +1948,12 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     max-width: 96vw;
-    max-height: 84vh;
+    max-height: 92vh;
 }
 
 .modal-content {
     max-width: 96vw;
-    max-height: 84vh;
+    max-height: 92vh;
     object-fit: contain;
     animation: zoomIn 0.3s ease;
     border-radius: var(--radius-md);
