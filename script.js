@@ -228,32 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // "copy link" button inside the modal
-    const modalShare = document.querySelector('.modal-share');
-    if (modalShare) {
-        const defaultLabel = modalShare.textContent;
-        modalShare.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const link = location.href;
-            const done = () => {
-                modalShare.textContent = modalShare.dataset.done || 'Скопировано';
-                setTimeout(() => { modalShare.textContent = defaultLabel; }, 1600);
-            };
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(link).then(done).catch(() => {});
-            } else {
-                const tmp = document.createElement('textarea');
-                tmp.value = link;
-                document.body.appendChild(tmp);
-                tmp.select();
-                document.execCommand('copy');
-                document.body.removeChild(tmp);
-                done();
-            }
-        });
-    }
-
     // open the photo referenced by the address, e.g. /#vig-trans-2
     const openFromHash = () => {
         const hash = location.hash.replace('#', '');
