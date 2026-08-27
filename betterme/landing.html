@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подтянутое тело без зала — 15 минут в день, дома, без оборудования</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1d1e; --ink2:#5a5f61; --ink3:#9aa0a2;
+    --line:#e4e5e3; --bg:#f4f4f2; --card:#26282a;
+    --lime:#cbf24d; --lime-d:#b8e02f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    color:var(--ink); background:var(--bg);
+    font-size:16px; line-height:1.6; letter-spacing:-.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+  svg{display:block}
+
+  /* ---------- hero ---------- */
+  /* Слои по порядку: локальный hero.jpg → ссылка на сгенерированный файл → градиент.
+     Как только hero.jpg окажется в этой папке, он перекроет ссылку. */
+  .hero{
+    position:relative;min-height:720px;display:flex;flex-direction:column;
+    background-image:
+      url('hero.jpg'),
+      url('https://pikaso.cdnpk.net/private/production/5279935726/render.jpg?token=exp=1788220800~hmac=0a4a7ac2dfc12b8bceb4d75ff7295c5ba4225fb179ac3f23d55efecff8909e19'),
+      radial-gradient(65% 75% at 50% 38%, rgba(214,218,219,.85) 0%, rgba(214,218,219,0) 72%),
+      linear-gradient(158deg,#8b9194 0%,#a7acae 42%,#787e81 100%);
+    background-size:cover,cover,auto,auto;
+    background-position:center 28%,center 28%,center,center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(58% 62% at 50% 52%, rgba(18,20,21,.46) 0%, rgba(18,20,21,0) 78%),
+      linear-gradient(180deg,rgba(18,20,21,.34) 0%,rgba(18,20,21,.10) 30%,rgba(18,20,21,.50) 100%);
+  }
+  .topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 40px}
+  .chip{
+    background:rgba(255,255,255,.20);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.28);color:#fff;
+    padding:9px 18px;border-radius:100px;font-size:13.5px;font-weight:600;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  }
+  .chip.lime{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+  .logo{
+    position:absolute;left:50%;transform:translateX(-50%);
+    display:flex;align-items:center;gap:9px;color:#fff;
+    font-size:15px;font-weight:600;letter-spacing:.02em;
+  }
+
+  .hero-in{
+    position:relative;z-index:2;flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    padding:60px 40px 100px;
+  }
+  .kick{
+    display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:rgba(255,255,255,.85);font-weight:600;margin-bottom:26px;
+  }
+  .kick i{font-style:normal;opacity:.5}
+  h1{
+    font-size:66px;line-height:1.05;letter-spacing:-.038em;font-weight:500;
+    color:#fff;max-width:14ch;
+  }
+  .hero-sub{
+    margin-top:20px;font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.88);
+    max-width:46ch;font-weight:400;
+  }
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;margin-top:32px;
+    background:var(--lime);color:var(--ink);
+    padding:17px 34px;border-radius:100px;font-weight:700;font-size:15.5px;text-decoration:none;
+    transition:background .15s;
+  }
+  .cta:hover{background:var(--lime-d)}
+  .under{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.72);font-weight:500}
+
+  /* ---------- тёмная карточка с цифрами ---------- */
+  .statwrap{margin-top:-60px;position:relative;z-index:3}
+  .stats{
+    background:var(--card);color:#fff;border-radius:22px;
+    padding:20px;display:grid;grid-template-columns:repeat(3,1fr) 1.35fr;gap:14px;
+  }
+  .stat{padding:26px 24px;border-radius:16px;background:#2f3234;display:flex;flex-direction:column;justify-content:space-between}
+  .stat .ic{width:38px;height:38px;border-radius:50%;background:#3b3f41;color:var(--lime);display:flex;align-items:center;justify-content:center;margin-bottom:26px}
+  .stat .ic svg{width:19px;height:19px}
+  .stat .n{font-size:30px;font-weight:700;letter-spacing:-.038em;line-height:1.1}
+  .stat .t{margin-top:6px;font-size:13.5px;color:#a3a9ab;font-weight:500;line-height:1.45}
+
+  /* выделенный челлендж */
+  .stat.hl{background:var(--lime);color:var(--ink)}
+  .stat.hl .ic{background:rgba(27,29,30,.12);color:var(--ink)}
+  .stat.hl .t{color:#4a5220}
+  .stat.hl .tag{
+    align-self:flex-start;background:var(--ink);color:var(--lime);
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+    padding:5px 12px;border-radius:100px;margin-bottom:10px;
+  }
+
+  .stats .note{padding:26px 24px;display:flex;flex-direction:column;justify-content:center}
+  .stats .note p{font-size:14.5px;line-height:1.65;color:#b7bcbd}
+  .stats .note a{
+    display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:18px;
+    background:var(--lime);color:var(--ink);padding:12px 22px;border-radius:100px;
+    font-weight:700;font-size:14px;text-decoration:none;
+  }
+
+  /* ---------- секции ---------- */
+  section{padding:92px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+  h2{font-size:38px;line-height:1.12;letter-spacing:-.032em;font-weight:500}
+  .lead{margin-top:16px;font-size:15.5px;color:var(--ink2);max-width:44ch;line-height:1.65}
+  .pillbtn{
+    background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;
+    padding:14px 28px;border-radius:100px;font-size:14.5px;font-weight:600;flex-shrink:0;margin-top:6px;
+  }
+
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:66px}
+  .col .ic{
+    width:46px;height:46px;border-radius:50%;background:var(--card);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--lime);margin-bottom:22px;
+  }
+  .col .ic svg{width:21px;height:21px}
+  .col h3{font-size:19px;font-weight:600;letter-spacing:-.022em;margin-bottom:9px}
+  .col p{font-size:15px;color:var(--ink2);line-height:1.6}
+  .col a{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+  /* ---------- шаги ---------- */
+  .divide{border-top:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:62px}
+  .st{padding-top:22px;border-top:1.5px solid var(--ink)}
+  .st .n{font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--ink3);margin-bottom:12px}
+  .st p{font-size:17px;font-weight:600;letter-spacing:-.024em;line-height:1.35}
+  .after{margin-top:40px;font-size:16.5px;color:var(--ink2)}
+
+  /* ---------- финал ---------- */
+  .final{
+    border-radius:26px;padding:96px 40px;text-align:center;color:#fff;
+    background:
+      radial-gradient(70% 80% at 50% 42%, rgba(206,211,212,.55) 0%, rgba(206,211,212,0) 72%),
+      linear-gradient(158deg,#7d8386 0%,#9ba1a3 46%,#6d7376 100%);
+    position:relative;overflow:hidden;
+  }
+  .final h2{color:#fff;font-size:44px;max-width:14ch;margin:0 auto}
+  .final .lead{color:rgba(255,255,255,.88);max-width:34ch;margin:18px auto 0;font-size:16.5px}
+  .final .under{color:rgba(255,255,255,.74)}
+
+  .foot{padding:52px 0 60px;font-size:12.5px;line-height:1.65;color:var(--ink3);text-align:center}
+  .foot .disc{max-width:600px;margin:0 auto 14px}
+
+  @media(max-width:980px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stats .note{grid-column:1/-1;background:#2f3234;border-radius:16px}
+    .cols{grid-template-columns:1fr;gap:40px}
+    .steps{grid-template-columns:repeat(2,1fr);gap:28px}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 20px}
+    .topbar{padding:18px 20px}
+    .logo{position:static;transform:none}
+    .hero{min-height:560px}
+    h1{font-size:38px}
+    .hero-in{padding:40px 22px 84px}
+    .stats{grid-template-columns:1fr;padding:14px;gap:12px}
+    .stat .ic{margin-bottom:18px}
+    section{padding:60px 0}
+    h2,.final h2{font-size:28px}
+    .sec-head{flex-direction:column;gap:22px}
+    .steps{grid-template-columns:1fr}
+    .final{padding:64px 24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="topbar">
+    <a class="chip" href="#">Меню
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </a>
+    <div class="logo">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+      Ядро
+    </div>
+    <a class="chip lime" href="#start">Начать бесплатно</a>
+  </div>
+
+  <div class="hero-in">
+    <div class="kick">15 минут в день <i>·</i> дома <i>·</i> без оборудования</div>
+    <h1>Подтянутое тело без зала</h1>
+    <div class="hero-sub">Калистеника для тех, кто хочет стать сильнее, стройнее и подтянуть тело без долгих тренировок.</div>
+    <a class="cta" href="#start">
+      Начать бесплатно
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="under">7 дней бесплатно</div>
+  </div>
+</div>
+
+<div class="wrap statwrap">
+  <div class="stats">
+
+    <div class="stat">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+      </div>
+      <div>
+        <div class="n">15 мин</div>
+        <div class="t">одна тренировка, и она закончена</div>
+      </div>
+    </div>
+
+    <div class="stat hl">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M9 15.5l2 2 4-4"/></svg>
+      </div>
+      <div>
+        <div class="tag">Челлендж</div>
+        <div class="n">28 дней</div>
+        <div class="t">программа с началом и концом</div>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3.5l9 7"/><path d="M5.5 9.5V20.5h13V9.5"/><path d="M10 20.5v-6h4v6"/></svg>
+      </div>
+      <div>
+        <div class="n">Без оборудования</div>
+        <div class="t">только вес собственного тела</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>Не нужно ехать в зал, покупать тренажёры или выделять час на спорт. Пятнадцати минут в день достаточно, чтобы начать тренироваться регулярно и работать над всем телом.</p>
+      <a href="#start">
+        Начать бесплатно
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Что получишь</h2>
+        <div class="lead">Упражнения с весом собственного тела задействуют сразу несколько групп мышц, поэтому за пятнадцать минут работает всё тело.</div>
+      </div>
+      <a class="pillbtn" href="#start">Смотреть программу</a>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.3 6.2 6.2 2.3-6.2 2.3-2.3 6.2-2.3-6.2L3.5 12l6.2-2.3z"/></svg>
+        </div>
+        <h3>Подтянутые мышцы</h3>
+        <p>Пресс, ноги, ягодицы, руки и спина.</p>
+        <a href="#start">Подробнее</a>
+      </div>
+      <div class="col">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        </div>
+        <h3>Больше силы</h3>
+        <p>Упражнения с собственным весом становятся сложнее вместе с тобой.</p>
+        <a href="#start">Подробнее</a>
+      </div>
+      <div class="col">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.4 3.6-3.6 4.4-3.6 8a3.6 3.6 0 007.2 0c0-1.3-.7-2.3-1.3-3.1 2.4 1.3 4.2 3.4 4.2 6.1a6.5 6.5 0 01-13 0C5.5 8.5 11.4 7.6 12 3z"/></svg>
+        </div>
+        <h3>Меньше жира</h3>
+        <p>Тренировки помогают увеличить расход калорий и привести тело в форму.</p>
+        <a href="#start">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divide"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Просто открывай тренировку и повторяй</h2>
+        <div class="lead">Не нужно составлять программу самостоятельно и каждый день решать, что делать сегодня.</div>
+      </div>
+      <a class="pillbtn" href="#start">Пройти тест</a>
+    </div>
+
+    <div class="steps">
+      <div class="st">
+        <div class="n">01</div>
+        <p>Выбираешь свой уровень</p>
+      </div>
+      <div class="st">
+        <div class="n">02</div>
+        <p>Открываешь тренировку на сегодня</p>
+      </div>
+      <div class="st">
+        <div class="n">03</div>
+        <p>Занимаешься 15 минут</p>
+      </div>
+      <div class="st">
+        <div class="n">04</div>
+        <p>Переходишь к следующей</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="final" id="start">
+    <h2>Начни сегодня</h2>
+    <div class="lead">15 минут. Без зала. Без оборудования.<br>Первое занятие бесплатно.</div>
+    <a class="cta" href="#">
+      Начать тренировку
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="under">7 дней бесплатно. Без карты.</div>
+  </div>
+</div>
+
+<div class="foot">
+  <div class="wrap">
+    <div class="disc">Результат зависит от регулярности занятий и питания и у разных людей отличается. Программа не заменяет консультацию врача. При хронических заболеваниях и травмах обсудите нагрузку со специалистом.</div>
+    Учебный макет. Собран Анастасией Горн как приложение к тестовому заданию.
+  </div>
+</div>
+
+</body>
+</html>

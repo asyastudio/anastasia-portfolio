@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разбор продающего текста — Анастасия Горн</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16161c; --ink2:#4e4e59; --ink3:#8e8e99;
+    --line:#e7e7ed; --soft:#f7f7f5; --accent:#c2410c; --hl:#fff2e8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    color:var(--ink);background:#fff;
+    font-size:17.5px;line-height:1.62;letter-spacing:-.011em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
+
+  header{padding:88px 0 52px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:22px}
+  h1{font-size:44px;line-height:1.08;letter-spacing:-.035em;font-weight:700;max-width:17ch}
+  .by{margin-top:22px;color:var(--ink2);font-size:16px}
+  .by b{color:var(--ink);font-weight:600}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:27px;line-height:1.2;letter-spacing:-.026em;font-weight:600;margin-bottom:20px}
+  h3{font-size:18.5px;font-weight:600;margin:30px 0 8px;letter-spacing:-.015em}
+  p{margin-bottom:16px;color:var(--ink2)}
+  p strong,li strong{color:var(--ink);font-weight:600}
+  ul.plain{list-style:none;margin:0 0 18px}
+  ul.plain li{position:relative;padding-left:20px;margin-bottom:9px;color:var(--ink2)}
+  ul.plain li::before{content:'';position:absolute;left:3px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--ink3)}
+
+  blockquote{
+    margin:22px 0;padding:20px 24px;background:var(--soft);
+    border-radius:14px;color:var(--ink);font-size:18px;line-height:1.5;
+  }
+  blockquote .big{font-weight:600;font-size:21px;letter-spacing:-.02em;display:block;margin-bottom:6px}
+  .fine{font-size:14.5px;line-height:1.45;color:var(--ink2)}
+  .mark{background:var(--hl);color:var(--accent);padding:1px 6px;border-radius:5px;font-weight:600}
+
+  .pull{
+    margin:30px 0;padding:26px 28px;border-left:3px solid var(--accent);
+    background:linear-gradient(90deg,var(--hl),#fff);
+    font-size:21px;line-height:1.4;font-weight:600;letter-spacing:-.022em;color:var(--ink);
+  }
+
+  .creative{margin:26px 0;padding:24px 26px;border:1px solid var(--line);border-radius:18px}
+  .creative .tag{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+  .creative h3{margin-top:0;margin-bottom:8px;font-size:19px}
+  .creative p:last-child{margin-bottom:0}
+  .seq{font-weight:600;color:var(--ink);letter-spacing:-.01em}
+
+  .chain{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 6px}
+  .chain span{background:var(--ink);color:#fff;padding:9px 15px;border-radius:100px;font-size:14.5px;font-weight:500}
+
+  .cardlink{
+    display:block;margin-top:24px;padding:26px 28px;border:1px solid var(--line);
+    border-radius:18px;text-decoration:none;color:inherit;transition:.15s;
+  }
+  .cardlink:hover{border-color:var(--ink);}
+  .cardlink .t{font-size:19px;font-weight:600;letter-spacing:-.018em}
+  .cardlink .d{margin-top:6px;color:var(--ink2);font-size:16px}
+  .cardlink .go{margin-top:14px;color:var(--accent);font-weight:600;font-size:15px}
+
+  footer{padding:46px 0 70px;color:var(--ink3);font-size:15px}
+  footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+
+  @media(max-width:680px){
+    body{font-size:16.5px}
+    h1{font-size:32px}
+    h2{font-size:23px}
+    header{padding:60px 0 40px}
+    section{padding:40px 0}
+    .pull{font-size:18px;padding:20px 22px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Тестовое задание</div>
+    <h1>Почему эта реклама продаёт, хотя в ней нет ни слова о продукте</h1>
+    <div class="by"><b>Анастасия Горн</b> · разбор продающего текста BetterMe</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Какой текст я взяла</h2>
+    <p>Реклама BetterMe в сторис Instagram. Я слежу за фитнес-рекламой давно, просто из интереса. За один вечер мне показали три разных креатива, и все они ведут в одну воронку. Разбираю их вместе, потому что по отдельности механика не видна.</p>
+
+    <div class="creative">
+      <div class="tag">Креатив 1 · аккаунт lessie.fitness</div>
+      <h3>Диалог на набережной</h3>
+      <p>Яхты, столик, две женщины. Одна подтянутая, в купальнике и очках. Вторая обычная, в рубашке поверх купальника, рядом мужчина. Весь текст это их разговор, разложенный по кадрам:</p>
+      <blockquote>
+        — Must be nice having… for the gym.<br>
+        <span class="seq">— Gym? No. Calisthenics.</span><br>
+        — 15 minutes every morning.<br>
+        — Calisthenics?
+      </blockquote>
+      <p>Поверх кадров крупно: <strong>NO EQUIPMENT. AT HOME. 28 DAYS</strong>. Финальная реплика второй женщины, уже с улыбкой, обращена к мужчине рядом:</p>
+      <blockquote><span class="big">BABE, GIVE ME 28</span></blockquote>
+    </div>
+
+    <div class="creative">
+      <div class="tag">Креатив 2 · аккаунт 28 Day Challenge</div>
+      <h3>Сетка упражнений</h3>
+      <p>Обычная комната, паркет, домашняя съёмка без продакшна. Девять квадратов с упражнениями, на каждом подпись <strong>2×15</strong>. Дальше расписание по дням недели:</p>
+      <blockquote class="fine">
+        <strong>Monday</strong> · Squats 20 reps · Leg raises 15 reps · Bicycle crunches 20 reps · Lunges 15 reps<br><br>
+        <strong>Friday</strong> · Glute bridges 20 reps · Jumping jacks 30 sec · Jumping lunges 30 sec · Squats 20 reps
+      </blockquote>
+    </div>
+
+    <div class="creative">
+      <div class="tag">Креатив 3 · запись экрана</div>
+      <h3>Интерфейс приложения</h3>
+      <blockquote class="fine">
+        <strong>CALISTHENICS WORKOUT CHALLENGE</strong><br>
+        Main goal: Keep fit · Current Weight: 61 kg<br>
+        Your progress: 1 of 28 workouts
+      </blockquote>
+      <p>Под этим сетка Day 1 – Day 28. Первый день открыт, остальные двадцать семь под замками. Палец нажимает на второй день: вес меняется на <strong>60 kg</strong>, прогресс на <strong>2 of 28</strong>. Карточка тренировки подписана «Full Body Conditioning · 15 min · No equipment». Последний кадр:</p>
+      <blockquote><span class="big">TRY NOW! ▽</span></blockquote>
+    </div>
+
+    <h3>Мелким шрифтом на каждом кадре</h3>
+    <blockquote class="fine">Generative AI used. Actor portrayal. Following exercise and meal plans greatly impacts results. In 4 weeks user can typically expect to lose up to 1&#8209;2 pounds per week. Results may vary.</blockquote>
+    <p>Первый ролик целиком сгенерирован нейросетями. Ни съёмки, ни актрис, ни набережной не существует. Продакшн, который ещё пару лет назад стоил бы как отдельная кампания, теперь собирается на генерации, а значит вариантов креатива можно делать десятками и тестировать их между собой.</p>
+    <p>Там же аккуратно про результат: не «минус десять килограммов», а «обычно до 1&#8209;2 фунтов в неделю, результаты могут отличаться». Обещание в картинке смелое, обещание в мелком шрифте осторожное. Для ниши про здоровье это обязательная часть работы копирайтера, а не юридическая формальность.</p>
+
+    <h3>Кто рекламодатель</h3>
+    <p>Я открыла карточку аккаунта. Это не бренд-аккаунт BetterMe, а отдельная страница <strong>28 Day Challenge</strong>, Health &amp; Wellness Website, 107 тысяч подписчиков на Facebook, свой домен <strong>betterme-home-yoga.com</strong>. Инстаграма у страницы нет вообще.</p>
+    <p>Слово BetterMe появляется только после клика, в шапке лендинга. То есть у продукта не один голос, а много сменных лиц, каждое со своим доменом и своей подачей. Это и объясняет, зачем им дешёвая генерация: креативов нужно много, живут они недолго, а выживают те, что выиграли в тесте.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Кому этот текст и в какой момент</h2>
+    <p>Женщина, которая хочет изменить тело, но уже несколько раз пробовала и бросала. За спиной абонемент, которым она пользовалась месяц, и ощущение, что она не смогла.</p>
+    <ul class="plain">
+      <li>У меня нет времени</li>
+      <li>Мне стыдно идти в зал в таком виде</li>
+      <li>Я всё равно брошу, как в прошлый раз</li>
+      <li>Правильно тренироваться слишком сложно, я не разберусь</li>
+    </ul>
+    <div class="pull">Ни одно из этих возражений не про деньги. Все они про энергию и стыд. Поэтому текст про «всего 9 долларов» такую женщину не возьмёт.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Как устроен текст</h2>
+
+    <h3>1. Сначала доказательство, потом слова</h3>
+    <p>Первым идёт тело. Результат показан до того, как что-то обещано. Дальше текст только объясняет, как к этому прийти.</p>
+
+    <h3>2. Возражение вложено в уста персонажа</h3>
+    <p>«Must be nice having… for the gym» это не вопрос, а защита. Так звучит мысль «у неё просто есть время и деньги, а у меня нет», которой человек оправдывает собственное бездействие. Реклама произносит её вслух за зрителя, и зритель узнаёт себя.</p>
+
+    <h3>3. Отрицание ожидания</h3>
+    <p>«Gym? No.» Оправдание разбивается одним словом: дело было не во времени и не в абонементе. Именно здесь останавливается палец.</p>
+
+    <h3>4. Две женщины вместо одной</h3>
+    <p>В кадре не модель, а пара: подтянутая и обычная. Зритель смотрит глазами второй. Приём сильный, но и самый рискованный: работает он на сравнении себя с другой женщиной, то есть ровно на той неуверенности, из-за которой человек и не начинает.</p>
+
+    <h3>5. Замена барьера на посильное</h3>
+    <p>Барьер был «зал, абонемент, дорога, чужие взгляды». Его меняют на пятнадцать минут дома. Не «легче», а <span class="mark">конкретно измеримо легче</span>.</p>
+
+    <h3>6. У обещания есть граница</h3>
+    <p>«BABE, GIVE ME 28» это самая сильная строчка во всём ролике. Женщина не решает изменить жизнь, она просит двадцать восемь дней. У просьбы есть конец, поэтому её не страшно произнести.</p>
+    <p>Число работает сразу в трёх местах: в надписи на видео, в имени рекламодателя и в интерфейсе приложения. Человек видит одну и ту же цифру три раза за пятнадцать секунд и запоминает её вместо названия бренда.</p>
+
+    <h3>7. Двадцать семь замков</h3>
+    <p>Сетка Day 1 – Day 28 показана до покупки. Первый день открыт, остальные закрыты. Это уже не текст, это интерфейс, который договаривает за текст: начать можно прямо сейчас, а незакрытое остаётся висеть и тянет вернуться.</p>
+
+    <h3>8. Доказательство подано как интерфейс</h3>
+    <p>Вес на экране меняется с 61 на 60 килограммов между первым и вторым днём. Формально это не обещание, а скриншот. Обещание в тексте пришлось бы подкреплять, скриншот же читается как факт, хотя показывает ровно то, что нужно показать. Приём эффективный и на грани: в мелком шрифте компания честно пишет «до 1&#8209;2 фунтов в неделю», а картинка подсказывает совсем другой темп.</p>
+
+    <h3>9. Незаконченная фраза как крючок</h3>
+    <p>«IF YOU START CALISTHENICS» обрывается. Мозг не терпит незакрытых конструкций и сам тянется к кнопке.</p>
+
+    <h3>10. Признание неудачи чужими словами</h3>
+    <p>«I stopped chasing perfect workout» подано как комментарий живого человека, а не как реплика бренда. Это снимает главный стыд: не «ты ленивая», а «ты гонялась за идеальной тренировкой, и это было лишним».</p>
+
+    <h3>11. Форма важнее содержания</h3>
+    <p>Второй и третий ролики сняты как обычная сторис: домашний паркет, неидеальный свет, запись экрана телефона. Они не выглядят рекламой, поэтому их не отматывают рефлекторно.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Куда ведёт кнопка</h2>
+    <p>Я прошла по ссылке, чтобы посмотреть, что дальше. И там оказалось не то, чего ждёшь.</p>
+    <p>Кнопка ведёт <strong>не на лендинг с продающим текстом, а на квиз</strong>. Никакого экрана с описанием приложения, ценами и списком функций. Сразу вопрос, причём самый простой из возможных:</p>
+    <blockquote>
+      <span class="big">Calisthenics workout plan</span>
+      Choose your age
+    </blockquote>
+    <p>Возраст это вопрос, на который отвечают не думая. Но он же и главная переменная для персонализации и для рекламных сегментов. Первое действие ничего не стоит человеку и много даёт продукту.</p>
+    <p>Дальше вопросы становятся личными:</p>
+    <blockquote>
+      <span class="big">Do you struggle with any of the following?</span>
+      Sensitive back · Sensitive knees · None of the above
+    </blockquote>
+    <p>И сразу после ответа:</p>
+    <blockquote>
+      <span class="big">We got you!</span>
+      We'll add gentle exercises that will <strong>strengthen your knees</strong>.<br>
+      This means enjoying longer walks, less tension, and more day-to-day confidence!
+    </blockquote>
+
+    <h3>«We got you» вместо «Спасибо за ответ»</h3>
+    <p>Две секунды назад человек признался, что у него болят колени. Ответ звучит как «мы поняли, мы разберёмся», а не как подтверждение отправки формы.</p>
+
+    <h3>Ответ пользователя тут же превращается в обещание</h3>
+    <p>Не абстрактное «программа подстроится под вас», а конкретное: добавим мягкие упражнения для коленей. Человек сам назвал проблему, и продукт немедленно показал, что услышал.</p>
+
+    <h3>Выгода, а не свойство</h3>
+    <p>Не «упражнения на укрепление коленного сустава», а «дольше гулять, меньше напряжения, больше уверенности в обычный день».</p>
+
+    <div class="pull">Продающий текст здесь размазан по вопросам. Человек не читает оффер, он рассказывает о себе и получает подтверждения, что его услышали. К моменту, когда появится цена, он уже потратил несколько минут, и уходить психологически тяжелее.</div>
+
+    <p>Для подписочного продукта это работает лучше классического лендинга: квиз одновременно продаёт, собирает данные для персонализации и повышает вовлечённость до первого платежа.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Третий экран: где наконец появляется цена</h2>
+    <p>Я прошла квиз до конца и попала на страницу оплаты. Название страницы в адресе говорит само за себя: <strong>reason-to-believe</strong>. Здесь продукт впервые называет цену, и здесь же собрано всё, чем он её оправдывает.</p>
+
+    <h3>Сначала результат квиза, потом прайс</h3>
+    <p>Наверху надпись «Your Calisthenics Workout Plan is ready!» и график из двух точек: <strong>Now</strong> и <strong>Your Goal</strong>, со шкалами Body fat и Calisthenics workout level. Человек видит не оффер, а собственный план, который он только что собрал своими ответами. Отказаться от него психологически труднее, чем от абстрактной подписки.</p>
+
+    <h3>Таймер сформулирован как забота, а не как угроза</h3>
+    <blockquote>
+      <span class="big">Discount is reserved for: 09:07</span>
+      Your promo code is applied! · ana_aug26
+    </blockquote>
+    <p>Обычная механика дефицита, но глагол выбран точно. Не «скидка сгорит», а «скидка <em>зарезервирована</em> для тебя». И промокод не нужно искать: он уже применён и собран из имени человека и месяца. Скидка подана как что-то, что тебе уже принадлежит, а терять своё неприятнее, чем не получать чужое.</p>
+
+    <h3>Три плана и цена за день</h3>
+    <blockquote class="fine">
+      1-Week Trial · <s>₾28,56</s> ₾19,99 · <strong>₾2,86 в день</strong><br>
+      4-Week Plan · <em>most popular</em> · <s>₾85,70</s> ₾59,99 · <strong>₾2,14 в день</strong><br>
+      12-Week Plan · <s>₾142,85</s> ₾99,99 · <strong>₾1,19 в день</strong>
+    </blockquote>
+    <p>Каждая цена показана дважды: за период и за день. Шестьдесят лари это ощутимая сумма, а два лари в день это меньше кофе. Средний план помечен как самый популярный и стоит ровно между двумя другими, поэтому кажется разумным выбором. Самый дешёвый в пересчёте на день при этом самый долгий, и именно так покупателя двигают к трёхмесячному обязательству.</p>
+    <p>Валюта местная, грузинская. Страница определила регион и показала цену в лари, а не в долларах.</p>
+
+    <h3>Обещание крупно, условие мелко</h3>
+    <blockquote class="fine">Without cancellation, before the selected plan ends, I accept that BetterMe will automatically charge ₾85,70 every 4 weeks until I cancel.</blockquote>
+    <p>Скидка действует на первый период, дальше списывается полная цена. Это написано, но не выделено. Приём распространённый, и именно на нём подписочные сервисы чаще всего теряют доверие, когда человек замечает первое полное списание.</p>
+
+    <h3>Доказательства слоями</h3>
+    <ul class="plain">
+      <li>Цифры платформы: 2,2 млн отзывов, 1,7 млн пятизвёздочных оценок, App of the Day в 160 странах</li>
+      <li>Истории с именами и килограммами: Vera −5 кг, Rachael −6 кг, Debbi −8 кг</li>
+      <li>Короткие отзывы из сторов: «уже минус 5 фунтов», «пять дней и минус 2 кг»</li>
+      <li>Возврат денег за 30 дней, если человек докажет, что следовал плану</li>
+    </ul>
+    <p>Под двумя историями честно указано: у этой участницы был платный персональный коуч, и за отзыв она получила вознаграждение. Плюс медицинская оговорка про 0,45–0,9 кг в неделю. Это та же аккуратность, что в мелком шрифте рекламы, и она проходит через всю воронку.</p>
+
+    <h3>Состав плана дан выгодами</h3>
+    <blockquote class="fine">
+      10-20 min routines <em>that fit into your schedule</em><br>
+      Zero equipment <em>all you need is our plan</em><br>
+      Beginner-friendly exercises <em>for a flatter stomach and a better shaped form</em>
+    </blockquote>
+    <p>Ни одного слова про количество тренировок, форматы видео или технические возможности приложения. Каждый пункт это свойство плюс то, что оно даёт человеку.</p>
+
+    <div class="pull">И главное. Цифра 28 держится от первого кадра рекламы до кнопки оплаты: 28 DAYS на видео, 28 замков в интерфейсе, 4-Week Plan как рекомендованный, «Get visible results in 4 weeks» над прайсом. Одно число проходит через всю воронку и ни разу не меняется.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Почему это должно продавать</h2>
+    <p>Текст не продаёт фитнес-приложение. Он продаёт <strong>разрешение</strong>: тебе можно не ходить в зал, не быть идеальной и всё равно получить результат.</p>
+    <div class="chain">
+      <span>Результат виден</span>
+      <span>Возражение названо</span>
+      <span>Возражение снято</span>
+      <span>Срок ограничен</span>
+      <span>Шаг маленький</span>
+    </div>
+    <p style="margin-top:18px">Женщина не покупает подписку. Она нажимает «Подробнее», потому что ей стало любопытно, как пятнадцать минут могут дать такое тело. Всё остальное происходит уже в воронке.</p>
+    <p>И ещё одна причина: в тексте <strong>нет ни одного слова про сам продукт</strong>. Ни названия приложения, ни списка функций, ни количества программ. Продукт появляется только после клика, когда человек уже сам захотел разобраться.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Та же механика без единого рекламного слова</h2>
+    <p>Дело не в удачном креативе, а в закономерности.</p>
+    <p>Хлоя Тинг в 2020 собрала аудиторию на программе «2 Week Shred». Продающего текста там не было вообще: бесплатные видео на YouTube, никакой рекламы, никакого оффера. Но барьеры сняты те же самые:</p>
+    <ul class="plain">
+      <li><strong>Бесплатно</strong> вместо абонемента</li>
+      <li><strong>Дома</strong> вместо зала</li>
+      <li><strong>Без оборудования</strong> вместо инвентаря</li>
+      <li><strong>Две недели</strong> вместо «навсегда изменить образ жизни»</li>
+    </ul>
+    <p>Дальше та же логика: сначала человек получает результат и привычку, и только потом появляется приложение, где всё продолжается за деньги.</p>
+    <div class="pull">Главный рычаг в продуктах про здоровье и обучение это не убедить, что результат стоит усилий, а сделать первое усилие таким маленьким, что отказываться не от чего.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Что бы я проверила гипотезой</h2>
+    <p>Одно место кажется мне слабым: слово <strong>calisthenics</strong>. Женщина, которая бросала зал, может не знать этого термина, а незнакомое слово в заголовке добавляет барьер вместо того, чтобы его убирать. Косвенно это подтверждает и сам ролик: героине приходится переспрашивать «Calisthenics?», то есть сценарист сам заложил, что слово непонятное.</p>
+    <p>Поставила бы A/B-тест на два заголовка:</p>
+    <ul class="plain">
+      <li><strong>A.</strong> IF YOU START CALISTHENICS</li>
+      <li><strong>B.</strong> IF YOU TRAIN AT HOME, 15 MINUTES A DAY</li>
+    </ul>
+    <p>Гипотеза: вариант B даст выше CTR на холодной аудитории, потому что в нём нет незнакомых слов, зато сразу есть и место, и время. Вариант A может выигрывать на тёплой аудитории, которая уже ищет калистенику. Проверять на одинаковых плейсментах и одинаковом видео, чтобы разница была только в тексте.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Как я применила эту механику сама</h2>
+    <p>Чтобы не остаться на уровне рассуждений, я собрала учебный лендинг курса по той же схеме.</p>
+
+    <a class="cardlink" href="landing.html">
+      <div class="t">Челлендж «Идеальный пресс за 28 дней»</div>
+      <div class="d">Учебный макет: прямой оффер в шапке, снятие вины в середине, сетка из 28 дней с замками, ограниченный срок и минимальный порог входа.</div>
+      <div class="go">Открыть страницу →</div>
+    </a>
+
+    <h3>Что взято из разобранной рекламы</h3>
+    <ul class="plain">
+      <li><strong>Оффер в шапке без разгона.</strong> «Твой идеальный пресс за 28 дней. 15 минут в день. Включай и повторяй»</li>
+      <li><strong>У обещания есть срок.</strong> Не «навсегда», а двадцать восемь дней, как в «BABE, GIVE ME 28»</li>
+      <li><strong>Сетка дней с замками</strong> показана до покупки: первый день открыт, остальные закрыты</li>
+      <li><strong>Снятие вины отдельным блоком.</strong> «Ты не бросила. Ты просто выбрала слишком много»</li>
+      <li><strong>Возражения даны цитатами</strong>, слово в слово так, как женщина говорит их себе</li>
+      <li><strong>Барьер измерен в минутах</strong> и сравнён с бытовым действием</li>
+      <li><strong>Порог входа минимальный:</strong> не «купите курс», а «семь дней бесплатно без карты», и первое занятие двенадцать минут</li>
+      <li><strong>Первым вопросом в FAQ</strong> стоит «а если я снова брошу», потому что это главное, что мешает нажать кнопку</li>
+    </ul>
+
+    <h3>Что взято из русского рынка</h3>
+    <p>Структуру и слог я держала ближе к IRNBY Training Club: обращение на «ты», блок «Что ты получишь» глаголами будущего времени, короткий тест перед подбором программы, отзывы от имени участниц. Это привычный для русскоязычной аудитории порядок блоков, и он ложится на американскую механику без конфликта.</p>
+
+    <h3>Про обещание результата</h3>
+    <p>Оффер в шапке прямой, а внизу страницы стоит оговорка в том же виде, в каком её даёт BetterMe: результат зависит от регулярности, программа не заменяет врача. Продающий текст в этой нише не должен обещать лечение и гарантированные килограммы, иначе он вредит и людям, и бренду. Оговорка не ослабляет оффер, она делает его защитимым.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Анастасия Горн · <a href="https://asyastudio.github.io/anastasia-portfolio/">портфолио</a> · <a href="mailto:asya.studio1@gmail.com">asya.studio1@gmail.com</a> · <a href="https://t.me/asya_studio">Telegram</a>
+  </div>
+</footer>
+
+</body>
+</html>
