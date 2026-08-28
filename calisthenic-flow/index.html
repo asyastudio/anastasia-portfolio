@@ -285,36 +285,144 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
 .rv.d1{transition-delay:.09s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.27s}.rv.d4{transition-delay:.36s}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-/* ---------- адаптив ---------- */
+/* ============================================================
+   АДАПТИВ
+   ============================================================ */
+
+/* планшет */
 @media(max-width:1080px){
-  .aware-photo{margin-right:-40px;min-height:560px}
-  .format-photo{margin-left:-40px;min-height:600px}
-  .result-list{grid-template-columns:repeat(2,1fr);gap:36px}
+  .wrap{padding:0 32px}
+  .hero-grid{gap:40px}
+  .hero-copy{padding:96px 0 88px}
+  .hero-photo{margin-right:-32px;min-height:560px;border-radius:220px 220px 34px 34px}
+  .aware{padding:96px 0 100px}
+  .aware-grid,.format-grid{gap:52px}
+  .aware-photo{margin-right:-32px;min-height:560px}
+  .format-photo{margin-left:-32px;min-height:600px}
+  .format{padding:100px 0}
+  .result-list{grid-template-columns:repeat(2,1fr);gap:16px}
+  .result-hero>.wrap{padding-left:40px}
 }
+
+/* узкий планшет и крупный телефон: всё в одну колонку */
 @media(max-width:860px){
   .wrap{padding:0 24px}
+  section{padding:76px 0}
+
+  /* герой: текст, под ним фото на всю ширину */
+  .hero{border-radius:0 0 34px 34px}
   .hero-grid{grid-template-columns:1fr;min-height:0;gap:0}
-  .hero-copy{padding:88px 0 44px;max-width:none}
-  .hero-photo{margin:0 -24px;border-radius:200px 200px 34px 34px;min-height:480px}
-  .aware{padding:84px 0 90px}
-  .aware-grid,.format-grid{grid-template-columns:1fr;gap:44px}
-  .aware-photo{order:-1;margin:0 -24px;border-radius:34px 34px 180px 180px;min-height:460px}
-  .format-photo{margin:0 -24px;border-radius:180px 180px 34px 34px;min-height:460px}
-  .result{border-radius:34px}
-  .result-hero{border-radius:34px 34px 0 0;min-height:0}
+  .hero-copy{padding:76px 0 40px;max-width:none}
+  .hero-photo{
+    margin:0 -24px;border-radius:180px 180px 34px 34px;
+    min-height:440px;aspect-ratio:3/4;background-position:center 22%;
+  }
+  @supports (aspect-ratio:1){.hero-photo{min-height:0}}
+  .hero-strip{flex-direction:column;align-items:flex-start;gap:12px;padding:24px 0 0}
+
+  /* осознанное движение */
+  .aware{padding:76px 0 80px}
+  .aware-grid,.format-grid{grid-template-columns:1fr;gap:38px}
+  .aware-photo{
+    order:-1;margin:0 -24px;border-radius:34px 34px 160px 160px;
+    min-height:400px;aspect-ratio:4/5;
+  }
+  @supports (aspect-ratio:1){.aware-photo,.format-photo{min-height:0}}
+  .outcome{max-width:none;padding:24px 26px;gap:16px}
+
+  /* формат */
+  .format{padding:76px 0}
+  .format-photo{
+    margin:0 -24px;border-radius:160px 160px 34px 34px;
+    min-height:400px;aspect-ratio:4/5;
+  }
+  @supports (aspect-ratio:1){.aware-photo,.format-photo{min-height:0}}
+  .pill-rows{max-width:none}
+
+  /* результат: текст на плотном фоне сверху, фото проступает снизу */
+  .result{border-radius:34px;padding-bottom:76px}
+  .result-hero{
+    border-radius:34px 34px 0 0;min-height:0;
+    background-position:center bottom;padding-bottom:190px;align-items:flex-start;
+  }
+  .result-hero::before{
+    background:linear-gradient(180deg,
+      rgba(238,244,238,1) 0%,
+      rgba(238,244,238,.99) 46%,
+      rgba(238,244,238,.55) 74%,
+      rgba(238,244,238,0) 100%);
+  }
   .result-hero>.wrap{padding-left:24px;padding-right:24px}
-  .result-hero::before{background:linear-gradient(180deg,rgba(238,244,238,.92) 0%,rgba(238,244,238,.86) 60%,rgba(238,244,238,.7) 100%)}
-  .result-hero .inner{padding:64px 0}
-  .result-list{margin-top:54px}
-  .format{padding:88px 0}
+  .result-hero .inner{max-width:none;padding:56px 0 0}
+  .result-list{margin-top:44px}
+
+  /* финал */
   .final{border-radius:34px;min-height:0}
-  .final .inner{padding:76px 24px}
-  .outcome{flex-direction:column;gap:12px}
+  .final .inner{padding:72px 24px;max-width:none}
+
+  footer{padding-bottom:56px}
 }
-@media(max-width:520px){
-  .result-list{grid-template-columns:1fr;gap:28px}
-  .btn{padding:16px 30px;font-size:12px}
-  .hero-strip{gap:18px;font-size:11.5px}
+
+/* телефон */
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  section{padding:64px 0}
+
+  /* кегль подобран так, чтобы принудительные переносы в h1 держались */
+  h1{font-size:30px;line-height:1.14;letter-spacing:-.028em}
+  .tag{font-size:12px;letter-spacing:.16em;padding:9px 18px 9px 15px}
+  .hero-copy{padding:60px 0 34px}
+  .hero-copy .tag{margin-bottom:24px}
+  .hero-copy .lede{margin-top:20px}
+  .hero-copy .btn{margin-top:30px}
+  .hero-photo{margin:0 -20px;border-radius:140px 140px 28px 28px;aspect-ratio:4/5}
+
+  .aware-photo,.format-photo{margin-left:-20px;margin-right:-20px;aspect-ratio:1/1}
+  .aware-photo{border-radius:28px 28px 130px 130px}
+  .format-photo{border-radius:130px 130px 28px 28px}
+
+  /* «В итоге» столбиком: линия снизу, а не сбоку */
+  .outcome{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 24px;border-radius:20px}
+  .outcome .k{
+    align-self:flex-start;padding:0 0 12px 0;
+    border-right:none;border-bottom:1px solid rgba(109,130,80,.24);
+    width:100%;font-size:12px;
+  }
+
+  .result{border-radius:28px;padding-bottom:64px}
+  .result-hero{border-radius:28px 28px 0 0;padding-bottom:150px}
+  .result-hero>.wrap{padding-left:20px;padding-right:20px}
+  .result-hero .inner{padding-top:48px}
+  .result-list{grid-template-columns:1fr;gap:12px}
+  .res{padding:26px 24px 28px;border-radius:22px}
+
+  .pill-row{padding:14px 24px;font-size:14.5px}
+  .pill{padding:10px 18px;font-size:13px}
+
+  .final{border-radius:28px}
+  .final .inner{padding:60px 20px}
+  .final .lede{max-width:none}
+
+  .foot-mid{font-size:12px;padding:10px 20px}
+}
+
+/* очень узкие экраны */
+@media(max-width:380px){
+  h1{font-size:26px}
+  .btn{padding:15px 26px;font-size:11.5px;letter-spacing:.14em;gap:9px}
+  .res p,.outcome p{font-size:15.5px}
+  .hero-photo{aspect-ratio:3/4}
+  .tag{font-size:11.5px;letter-spacing:.14em}
+}
+
+/* тач: гасим залипающие ховеры */
+@media(hover:none){
+  .btn:hover{transform:none;box-shadow:none;background:var(--gold)}
+  .btn:hover svg{transform:none}
+  .btn.outline:hover{background:transparent;border-color:var(--hair)}
+  .pill:hover,.pill-row:hover{transform:none;background:var(--mint-2)}
+  .res:hover{transform:none;background:rgba(255,255,255,.78);box-shadow:none}
+  .foot-me a:hover{color:var(--ink2);border-color:var(--hair)}
 }
 </style>
 </head>
