@@ -51,11 +51,11 @@ img,svg{display:block;max-width:100%}
 /* ---------- типографика ---------- */
 .display{
   font-family:'Playfair Display',Georgia,serif;
-  font-weight:600;letter-spacing:.015em;line-height:1.04;
-  text-transform:uppercase;color:var(--olive);
+  font-weight:600;letter-spacing:-.005em;line-height:1.04;
+  color:var(--olive);
 }
 .eyebrow{
-  font-size:12.5px;letter-spacing:.19em;text-transform:uppercase;
+  font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--olive);font-weight:700;
 }
 /* акцентная метка в шапке: та же типографика, но на подложке — читается заметно лучше */
@@ -63,7 +63,7 @@ img,svg{display:block;max-width:100%}
   display:inline-flex;align-items:center;gap:11px;
   background:rgba(109,130,80,.13);color:var(--olive);
   padding:10px 22px 10px 18px;border-radius:100px;
-  font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;
 }
 .tag i{width:6px;height:6px;border-radius:50%;background:var(--olive);display:block;flex:none}
 
@@ -83,7 +83,7 @@ h2{
   display:inline-flex;align-items:center;gap:12px;
   background:var(--gold);color:var(--ink);
   padding:17px 38px;border-radius:100px;
-  font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   text-decoration:none;border:1px solid transparent;
   transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
 }
@@ -153,7 +153,7 @@ h2{
 /* мини-строка под героем */
 .hero-strip{
   display:flex;gap:34px;flex-wrap:wrap;align-items:center;
-  padding:26px 0 44px;font-size:12.5px;letter-spacing:.2em;
+  padding:26px 0 44px;font-size:12.5px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--ink3);font-weight:600;
 }
 .hero-strip span{display:flex;align-items:center;gap:12px}
@@ -171,7 +171,7 @@ h2{
   border-radius:24px;padding:28px 32px;max-width:540px;
 }
 .outcome .k{
-  font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;
   font-weight:800;color:var(--olive);white-space:nowrap;
   padding-right:26px;border-right:1px solid rgba(109,130,80,.24);align-self:stretch;
   display:flex;align-items:center;
@@ -187,9 +187,9 @@ h2{
 /* ============================================================
    3. РЕЗУЛЬТАТ
    ============================================================ */
-.result{background:var(--mint-1);border-radius:46px;margin:0 0 0;padding:0 0 110px;overflow:hidden}
+.result{background:var(--mint-1);border-radius:46px;margin:0;padding:0;overflow:hidden}
 .result-hero{
-  position:relative;min-height:560px;border-radius:46px 46px 0 0;
+  position:relative;min-height:520px;border-radius:46px;
   background-image:var(--img-wide);
   background-size:cover;background-position:92% center;
   display:flex;align-items:center;
@@ -201,7 +201,7 @@ h2{
 /* текст прижат к левому краю секции, а не к центральной сетке */
 .result-hero>.wrap{max-width:none;width:100%;margin:0;padding-left:58px;padding-right:40px}
 .result-hero .inner{
-  position:relative;z-index:2;max-width:460px;padding:84px 0;
+  position:relative;z-index:2;max-width:500px;padding:72px 0;
   text-align:left;margin:0 auto 0 0;
 }
 .result-hero .big{
@@ -209,23 +209,31 @@ h2{
   font-weight:600;max-width:none;
 }
 
-/* преимущества карточками */
-.result-list{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
-.res{
-  background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);
-  border-radius:26px;padding:34px 30px 36px;
-  transition:transform .35s cubic-bezier(.2,.7,.2,1), background .35s ease, box-shadow .35s ease;
+/* дорожная карта прогресса */
+.road{list-style:none;position:relative;margin-top:32px}
+.road::before{
+  content:'';position:absolute;left:9px;top:10px;bottom:12px;width:2px;border-radius:2px;
+  background:linear-gradient(180deg,var(--olive) 0%,rgba(109,130,80,.55) 60%,rgba(109,130,80,.18) 100%);
 }
-.res:hover{
-  transform:translateY(-5px);background:#fff;
-  box-shadow:0 16px 34px -18px rgba(43,56,43,.22);
+.road-step{position:relative;padding:0 0 24px 40px}
+.road-step:last-child{padding-bottom:0}
+.road-dot{
+  width:20px;height:20px;border-radius:50%;position:absolute;left:0;top:1px;z-index:2;
+  background:var(--mint-1);border:2px solid var(--olive);
+  display:flex;align-items:center;justify-content:center;
 }
-.res .k{
-  font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
-  font-weight:800;color:var(--olive);margin-bottom:16px;
+.road-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--olive)}
+.road-step:last-child .road-dot{background:var(--olive)}
+.road-step:last-child .road-dot::after{background:var(--cream)}
+.road-week{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:800;color:var(--olive);margin-bottom:8px;
 }
-.res p{font-size:16.5px;color:var(--ink2);line-height:1.45}
-
+.road-k{
+  font-size:clamp(18px,1.5vw,21px);font-weight:700;letter-spacing:-.022em;
+  line-height:1.2;color:var(--ink);margin-bottom:8px;
+}
+.road-step p{font-size:15.5px;color:var(--ink2);line-height:1.5}
 /* ============================================================
    4. ФОРМАТ ПРОГРАММЫ
    ============================================================ */
@@ -244,7 +252,7 @@ h2{
 .final-wrap{padding:0 0 90px}
 .final{
   position:relative;border-radius:46px;overflow:hidden;
-  min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;
+  min-height:clamp(400px,40vw,520px);display:flex;align-items:center;justify-content:center;text-align:center;
   background-image:var(--img-final);
   background-size:cover;background-position:center 38%;
 }
@@ -253,8 +261,8 @@ h2{
   background:
     radial-gradient(60% 70% at 50% 50%, rgba(247,250,246,.93) 0%, rgba(240,246,240,.74) 58%, rgba(232,241,233,.52) 100%);
 }
-.final .inner{position:relative;z-index:2;padding:100px 40px;max-width:640px}
-.final h2{font-size:clamp(34px,4.4vw,58px);margin-bottom:20px}
+.final .inner{position:relative;z-index:2;padding:72px 40px;max-width:640px}
+.final h2{font-size:clamp(34px,4.4vw,58px);font-weight:700;margin-bottom:20px}
 .final .lede{max-width:34ch;margin:0 auto}
 .final .btn{margin-top:38px}
 
@@ -263,7 +271,8 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;
   border-top:1px solid var(--hair);padding-top:34px;
 }
-.foot-in .brand{font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-size:13px}
+.foot-in .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-size:13px}
+.foot-in .mark{width:20px;height:36px;flex:none;color:var(--olive)}
 .foot-mid{
   justify-self:center;text-align:center;
   background:var(--mint-2);border-radius:100px;padding:11px 26px;
@@ -300,7 +309,6 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   .aware-photo{margin-right:-32px;min-height:560px}
   .format-photo{margin-left:-32px;min-height:600px}
   .format{padding:100px 0}
-  .result-list{grid-template-columns:repeat(2,1fr);gap:16px}
   .result-hero>.wrap{padding-left:40px}
 }
 
@@ -354,7 +362,7 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   }
   .result-hero>.wrap{padding-left:24px;padding-right:24px}
   .result-hero .inner{max-width:none;padding:56px 0 0}
-  .result-list{margin-top:44px}
+  .road{margin-top:36px}
 
   /* финал */
   .final{border-radius:34px;min-height:0}
@@ -370,7 +378,7 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
 
   /* кегль подобран так, чтобы принудительные переносы в h1 держались */
   h1{font-size:30px;line-height:1.14;letter-spacing:-.028em}
-  .tag{font-size:12px;letter-spacing:.16em;padding:9px 18px 9px 15px}
+  .tag{font-size:12px;letter-spacing:.09em;padding:9px 18px 9px 15px}
   .hero-copy{padding:60px 0 34px}
   .hero-copy .tag{margin-bottom:24px}
   .hero-copy .lede{margin-top:20px}
@@ -393,8 +401,6 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   .result-hero{border-radius:28px 28px 0 0;padding-bottom:150px}
   .result-hero>.wrap{padding-left:20px;padding-right:20px}
   .result-hero .inner{padding-top:48px}
-  .result-list{grid-template-columns:1fr;gap:12px}
-  .res{padding:26px 24px 28px;border-radius:22px}
 
   .pill-row{padding:14px 24px;font-size:14.5px}
   .pill{padding:10px 18px;font-size:13px}
@@ -409,10 +415,10 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
 /* очень узкие экраны */
 @media(max-width:380px){
   h1{font-size:26px}
-  .btn{padding:15px 26px;font-size:11.5px;letter-spacing:.14em;gap:9px}
-  .res p,.outcome p{font-size:15.5px}
+  .btn{padding:15px 26px;font-size:11.5px;letter-spacing:.09em;gap:9px}
+  .road-step p,.outcome p{font-size:15.5px}
   .hero-photo{aspect-ratio:3/4}
-  .tag{font-size:11.5px;letter-spacing:.14em}
+  .tag{font-size:11.5px;letter-spacing:.09em}
 }
 
 /* тач: гасим залипающие ховеры */
@@ -421,7 +427,6 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   .btn:hover svg{transform:none}
   .btn.outline:hover{background:transparent;border-color:var(--hair)}
   .pill:hover,.pill-row:hover{transform:none;background:var(--mint-2)}
-  .res:hover{transform:none;background:rgba(255,255,255,.78);box-shadow:none}
   .foot-me a:hover{color:var(--ink2);border-color:var(--hair)}
 }
 </style>
@@ -490,30 +495,27 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
   <div class="result-hero">
     <div class="wrap">
       <div class="inner">
-        <div class="eyebrow rv">Осознанное движение</div>
-        <div class="display rv d1" style="font-size:clamp(30px,3.6vw,46px);margin:18px 0 26px">Calisthenic Flow</div>
         <div class="big rv d2">Заметный прогресс<br>за 3 недели</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="result-list">
-      <div class="res rv">
-        <div class="k">Сила</div>
-        <p>Укрепление мышц всего тела</p>
-      </div>
-      <div class="res rv d1">
-        <div class="k">Выносливость</div>
-        <p>Больше выносливости без тренажёров</p>
-      </div>
-      <div class="res rv d2">
-        <div class="k">Гибкость</div>
-        <p>Свобода движений и работа с мобильностью</p>
-      </div>
-      <div class="res rv d3">
-        <div class="k">Форма</div>
-        <p>Больше движения — больше расход калорий</p>
+      <ol class="road">
+        <li class="road-step rv">
+          <div class="road-dot"></div>
+          <div class="road-week">Неделя 1</div>
+          <div class="road-k">Сила</div>
+          <p>Осваиваем технику и укрепляем мышцы всего тела.</p>
+        </li>
+        <li class="road-step rv d1">
+          <div class="road-dot"></div>
+          <div class="road-week">Неделя 2</div>
+          <div class="road-k">Выносливость<br>и гибкость</div>
+          <p>Держим темп дольше, добавляем свободу движений<br>и работу с мобильностью.</p>
+        </li>
+        <li class="road-step rv d2">
+          <div class="road-dot"></div>
+          <div class="road-week">Неделя 3</div>
+          <div class="road-k">Форма</div>
+          <p>Тело подтягивается, движений становится больше — результат уже заметен.</p>
+        </li>
+      </ol>
       </div>
     </div>
   </div>
@@ -551,7 +553,7 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
 <div class="wrap final-wrap" style="max-width:1280px">
   <section class="final" id="start">
     <div class="inner">
-      <h2 class="rv">Начни с 15 минут</h2>
+      <h2 class="rv">Начни с 15 минут в день</h2>
       <p class="lede rv d1">Тренируйся дома, становись сильнее и приводи тело в форму.</p>
       <a class="btn rv d2" href="#">
         Попробовать
@@ -564,7 +566,7 @@ footer{padding:0 0 70px;font-size:13.5px;color:var(--ink3);line-height:1.65}
 <footer>
   <div class="wrap">
     <div class="foot-in">
-      <div class="brand">Calisthenic Flow</div>
+      <div class="brand"><svg class="mark" viewBox="185 550 428 776" fill="none" aria-hidden="true"><circle cx="481.18" cy="766.27" r="122.42" fill="currentColor" opacity=".22"/><circle cx="368.21" cy="1080.83" r="174.86" fill="currentColor" opacity=".22"/><path fill="currentColor" d="M407.029,1269.789c10.517,10.095,10.858,26.804,0.763,37.321 c-10.095,10.517-26.804,10.858-37.321,0.763c-10.517-10.095-10.858-26.804-0.763-37.321 C379.803,1260.035,396.512,1259.694,407.029,1269.789z M347.863,1160.262c-15.914,16.579-15.376,42.92,1.203,58.834 c16.579,15.914,42.92,15.376,58.835-1.203c15.914-16.579,15.376-42.92-1.203-58.834 C390.119,1143.144,363.778,1143.683,347.863,1160.262z M392.035,567.1c-9.239,9.625-8.926,24.917,0.698,34.156 c9.625,9.239,24.916,8.926,34.156-0.698c9.239-9.624,8.926-24.917-0.698-34.156C416.566,557.163,401.274,557.476,392.035,567.1z M352.864,1102.898c22.356,21.46,57.875,20.734,79.336-1.622c21.46-22.356,20.734-57.875-1.622-79.335 c-22.356-21.46-57.875-20.734-79.335,1.622C329.782,1045.919,330.508,1081.438,352.864,1102.898z M477.865,731.571 c-21.936-21.057-56.788-20.344-77.844,1.592c-21.057,21.935-20.344,56.787,1.592,77.844c21.935,21.057,56.787,20.344,77.844-1.592 C500.513,787.48,499.8,752.628,477.865,731.571z M401.914,659.017c0.381,18.639,15.8,33.44,34.439,33.059 c18.639-0.381,33.44-15.8,33.059-34.44c-0.381-18.639-15.8-33.44-34.439-33.059C416.333,624.958,401.532,640.377,401.914,659.017z M378.002,962.37c25.944,24.904,67.165,24.062,92.069-1.882c24.904-25.944,24.062-67.165-1.882-92.069 c-25.944-24.904-67.165-24.062-92.069,1.882C351.216,896.245,352.059,937.466,378.002,962.37z M477.865,731.571 c-21.936-21.057-56.788-20.344-77.844,1.592c-21.057,21.935-20.344,56.787,1.592,77.844c21.935,21.057,56.787,20.344,77.844-1.592 C500.513,787.48,499.8,752.628,477.865,731.571z M347.863,1160.262c-15.914,16.579-15.376,42.92,1.203,58.834 c16.579,15.914,42.92,15.376,58.835-1.203c15.914-16.579,15.376-42.92-1.203-58.834 C390.119,1143.144,363.778,1143.683,347.863,1160.262z M352.864,1102.898c22.356,21.46,57.875,20.734,79.336-1.622 c21.46-22.356,20.734-57.875-1.622-79.335c-22.356-21.46-57.875-20.734-79.335,1.622 C329.782,1045.919,330.508,1081.438,352.864,1102.898z"/></svg>Calisthenic Flow</div>
 
       <!-- название компании меняется здесь -->
       <div class="foot-mid">Тестовое задание для <b>WellnessWealthWay</b></div>
