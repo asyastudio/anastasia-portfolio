@@ -1002,6 +1002,48 @@ h1, h2, h3, h4 {
     position: relative;
 }
 
+/* короткое описание под заголовком проекта */
+.project__note {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+    max-width: 62ch;
+    margin: -6px 0 16px;
+}
+
+/* ссылка «открыть» под лентой превью */
+.project__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 18px 0 0;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, gap 0.2s ease;
+}
+
+.project__link span {
+    transition: transform 0.2s ease;
+}
+
+.project__link:hover {
+    opacity: 0.62;
+}
+
+.project__link:hover span {
+    transform: translateX(3px);
+}
+
+@media (hover: none) {
+    .project__link:hover { opacity: 1; }
+    .project__link:hover span { transform: none; }
+}
+
 .group-label--next {
     margin-top: 104px;
 }
